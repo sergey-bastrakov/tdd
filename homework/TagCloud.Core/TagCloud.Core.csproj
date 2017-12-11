@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Layouters.Contract\IRectangleLayouter.cs" />
     <Compile Include="Layouters\CircularCloudLayouter.cs" />
+    <Compile Include="Layouters\PositionedLayouter.cs" />
     <Compile Include="Math\Circle.cs" />
     <Compile Include="Math\DoubleExtensions.cs" />
     <Compile Include="Math\Rectangle.cs" />
