@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Layouters.Contract\IRectangleLayouter.cs" />
+    <Compile Include="Layouters\CircularCloudLayouter.cs" />
     <Compile Include="Math\Circle.cs" />
     <Compile Include="Math\DoubleExtensions.cs" />
     <Compile Include="Math\Rectangle.cs" />
