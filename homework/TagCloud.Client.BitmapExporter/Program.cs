@@ -79,7 +79,7 @@ namespace TagCloud.Client.BitmapExporter
 
             List<Rectangle> rectangles = Enumerable.Range(0, c.Count).Select(_ => layouter.Place(GetRandomSize(random, c))).ToList();
 
-            Bitmap result = rectangles.Colorize(colorGenerator.GetRandomColor).ToBitmap(new Size(1920, 1080));
+            Bitmap result = rectangles.Colorize(colorGenerator.GetRandomColor).ToBitmap(new System.Drawing.Rectangle(0, 0, 1920, 1080));
 
             Graphics graphics = Graphics.FromImage(result);
             graphics.DrawString(c.GetDescription(), new Font("Tahoma", 16), Brushes.White, 10, 10);

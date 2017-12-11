@@ -9,7 +9,7 @@ namespace TagCloud.Core.Drawing
 {
     public static class TagCloudVisualiseExtensions
     {
-        public static Bitmap ToBitmap(this IEnumerable<RectangleView> rectanglesViews, Size size, Color backgroundColor)
+        public static Bitmap ToBitmap(this IEnumerable<RectangleView> rectanglesViews, Rectangle bounds, Color backgroundColor)
         {
             List<RectangleView> views = rectanglesViews.ToList();
 
@@ -18,13 +18,15 @@ namespace TagCloud.Core.Drawing
                 return new Bitmap(10, 10);
             }
 
-            Bitmap bitmap = new Bitmap(size.Width, size.Height);
+            Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height);
             Graphics graphics = Graphics.FromImage(bitmap);
-            graphics.FillRectangle(new SolidBrush(backgroundColor), 0, 0, size.Width, size.Height);
+            graphics.FillRectangle(new SolidBrush(backgroundColor), 0, 0, bounds.Width, bounds.Height);
 
             foreach (RectangleView view in views)
             {
                 Rectangle rectangle = view.Rectangle.ToSystemRectangle();
+                rectangle.X -= bounds.X;
+                rectangle.Y -= bounds.Y;
                 graphics.FillRectangle(new SolidBrush(view.Color), rectangle);
                 graphics.DrawRectangle(new Pen(Color.Black, 1), rectangle);
             }
@@ -32,9 +34,9 @@ namespace TagCloud.Core.Drawing
             return bitmap;
         }
 
-        public static Bitmap ToBitmap(this IEnumerable<RectangleView> rectanglesViews, Size size)
+        public static Bitmap ToBitmap(this IEnumerable<RectangleView> rectanglesViews, Rectangle bounds)
         {
-            return ToBitmap(rectanglesViews, size, Color.Black);
+            return ToBitmap(rectanglesViews, bounds, Color.Black);
         }
 
         public static Bitmap ToBitmap(this IEnumerable<RectangleView> rectanglesViews, Color backgroundColor)
@@ -42,7 +44,7 @@ namespace TagCloud.Core.Drawing
             List<RectangleView> views = rectanglesViews.ToList();
             Rectangle bounds = views.Select(view => view.Rectangle).GetBounds().ToSystemRectangle();
 
-            return ToBitmap(views, bounds.Size, Color.Black);
+            return ToBitmap(views, bounds, Color.Black);
         }
 
         public static Bitmap ToBitmap(this IEnumerable<RectangleView> rectanglesViews)

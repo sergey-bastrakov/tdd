@@ -55,10 +55,12 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Layouter\BaseCircularCloudLayouterTest.cs" />
     <Compile Include="Layouter\CircularCloudLayouter_Should.cs" />
     <Compile Include="Layouter\PositionedLayouter_Should.cs" />
     <Compile Include="Math\Circle_Should.cs" />
@@ -71,6 +73,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\TagCloud.Core.Drawing\TagCloud.Core.Drawing.csproj">
+      <Project>{6BCC775B-2936-453B-ACB8-3D7AC6344B88}</Project>
+      <Name>TagCloud.Core.Drawing</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\TagCloud.Core\TagCloud.Core.csproj">
       <Project>{5f720d0f-7a6c-4181-821b-7b863db0d3fa}</Project>
       <Name>TagCloud.Core</Name>

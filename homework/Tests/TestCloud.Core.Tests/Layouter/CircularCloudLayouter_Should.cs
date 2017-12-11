@@ -2,18 +2,19 @@
 using System.Linq;
 using FluentAssertions;
 using NUnit.Framework;
-using TagCloud.Core.Layouters;
+using TagCloud.Core.Layouters.Contract;
 using TagCloud.Core.Math;
+using Rectangle = TagCloud.Core.Math.Rectangle;
 
 namespace TestCloud.Core.Tests.Layouter
 {
     [TestFixture]
-    public class CircularCloudLayouter_Should
+    public class CircularCloudLayouter_Should : BaseCircularCloudLayouterTest
     {
         [Test]
         public void Return_Rectangles()
         {
-            CircularCloudLayouter layouter = new CircularCloudLayouter(10, 8, 0.1);
+            IRectangleLayouter layouter = CreateTrackedLayouter(10, 8, 0.1);
 
             Rectangle rectA = layouter.Place(new Vector(10, 10));
             Rectangle rectB = layouter.Place(new Vector(10, 10));
@@ -25,7 +26,7 @@ namespace TestCloud.Core.Tests.Layouter
         [Test]
         public void GenerateRectangles_WhichPlacedWithMaxDensity()
         {
-            CircularCloudLayouter layouter = new CircularCloudLayouter(10, 32, 0.1);
+            IRectangleLayouter layouter = CreateTrackedLayouter(10, 32, 0.1);
             Vector rectangleSize = new Vector(40, 40);
             
             List<Rectangle> rectangles = Enumerable.Repeat(rectangleSize, 97).Select(size => layouter.Place(size)).ToList();
@@ -41,7 +42,7 @@ namespace TestCloud.Core.Tests.Layouter
         [Test]
         public void GenerateRectangles_WhichPlacedInCircle()
         {
-            CircularCloudLayouter layouter = new CircularCloudLayouter(10, 32, 0.1);
+            IRectangleLayouter layouter = CreateTrackedLayouter(10, 32, 0.1);
             Vector rectangleSize = new Vector(40, 40);
 
             List<Rectangle> rectangles = Enumerable.Repeat(rectangleSize, 97).Select(size => layouter.Place(size)).ToList();
