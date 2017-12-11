@@ -5,18 +5,26 @@
         public readonly Vector Center;
         public readonly Vector Size;
 
-        public Vector MinPoint => Center - Size / 2;
-        public Vector MaxPoint => Center + Size / 2;
+        public Vector MinPoint { get; }
+        public Vector MaxPoint { get; }
 
-        public double Left => MinPoint.X;
-        public double Right => MaxPoint.X;
-        public double Bottom => MinPoint.Y;
-        public double Top => MaxPoint.Y;
+        public double Left { get; }
+        public double Right { get; }
+        public double Bottom { get; }
+        public double Top { get; }
 
         public Rectangle(Vector center, Vector size)
         {
             Center = center;
             Size = size;
+
+            MinPoint = Center - Size / 2;
+            MaxPoint = Center + Size / 2;
+
+            Left = MinPoint.X;
+            Right = MaxPoint.X;
+            Bottom = MinPoint.Y;
+            Top = MaxPoint.Y;
         }
 
         public Rectangle Move(Vector vector) => new Rectangle(Center + vector, Size);

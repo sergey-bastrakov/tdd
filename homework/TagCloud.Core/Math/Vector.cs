@@ -9,12 +9,17 @@ namespace TagCloud.Core.Math
         public readonly double X;
         public readonly double Y;
 
-        public double Length => System.Math.Sqrt(X * X + Y * Y);
+        public double Length => GetLength();
 
         public Vector(double x, double y)
         {
             X = x;
             Y = y;
+        }
+
+        private double GetLength()
+        {
+            return System.Math.Sqrt(X * X + Y * Y);
         }
 
         public override bool Equals(object obj)
