@@ -66,5 +66,12 @@ namespace TagCloud.Core.Math
 
             return new Vector(vector.X / c, vector.Y / c);
         }
+
+        public static Vector operator -(Vector a)
+        {
+            return new Vector(-a.X, -a.Y);
+        }
+
+        public static readonly Vector Empty = default(Vector);
     }
 }

@@ -63,6 +63,16 @@ namespace TestCloud.Core.Tests.Math
         }
 
         [Test]
+        public void DivideVectorByConstant()
+        {
+            Vector vector = new Vector(10, 5);
+            vector = -vector;
+
+            vector.X.Should().Be(-10);
+            vector.Y.Should().Be(-5);
+        }
+
+        [Test]
         public void ThrowDivideByZeroException_WhenDivideByZero()
         {
             Vector vector = new Vector(1, 1);
