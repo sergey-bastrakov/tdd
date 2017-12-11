@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace TagCloud.Client.Forms
+namespace TagCloud.Core.Drawing
 {
     public class ColorGenerator
     {

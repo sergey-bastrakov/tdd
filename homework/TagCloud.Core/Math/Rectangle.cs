@@ -13,6 +13,11 @@
         public double Bottom { get; }
         public double Top { get; }
 
+        public double Width { get; }
+        public double Height { get; }
+
+        public double Area => Width * Height;
+
         public Rectangle(Vector center, Vector size)
         {
             Center = center;
@@ -25,6 +30,9 @@
             Right = MaxPoint.X;
             Bottom = MinPoint.Y;
             Top = MaxPoint.Y;
+
+            Width = Right - Left;
+            Height = Top - Bottom;
         }
 
         public Rectangle Move(Vector vector) => new Rectangle(Center + vector, Size);
@@ -33,6 +41,16 @@
                                                        other.Right > Left &&
                                                        Bottom < other.Top &&
                                                        other.Bottom < Top;
+        public Rectangle Encapsulate(Rectangle other)
+        {
+            double left = System.Math.Min(Left, other.Left);
+            double right  = System.Math.Max(Right, other.Right);
+            double bottom = System.Math.Min(Bottom, other.Bottom);
+            double top = System.Math.Max(Top, other.Top);
+
+            return new Rectangle(new Vector((right - left) / 2 + left, (top - bottom) / 2 + bottom),
+                new Vector(right - left, top - bottom));
+        }
 
         public override bool Equals(object obj)
         {

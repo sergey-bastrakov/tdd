@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCloud.Core.Tests", "tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagCloud.Client.Forms", "TagCloud.Client.Forms\TagCloud.Client.Forms.csproj", "{0D72AB67-57D1-4FC4-9E04-FD3416469539}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagCloud.Client.BitmapExporter", "TagCloud.Client.BitmapExporter\TagCloud.Client.BitmapExporter.csproj", "{137A74A5-4645-4FD9-8730-187549711DB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagCloud.Core.Drawing", "TagCloud.Core.Drawing\TagCloud.Core.Drawing.csproj", "{6BCC775B-2936-453B-ACB8-3D7AC6344B88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,14 @@ Global
 		{0D72AB67-57D1-4FC4-9E04-FD3416469539}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D72AB67-57D1-4FC4-9E04-FD3416469539}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D72AB67-57D1-4FC4-9E04-FD3416469539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{137A74A5-4645-4FD9-8730-187549711DB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{137A74A5-4645-4FD9-8730-187549711DB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{137A74A5-4645-4FD9-8730-187549711DB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{137A74A5-4645-4FD9-8730-187549711DB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BCC775B-2936-453B-ACB8-3D7AC6344B88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BCC775B-2936-453B-ACB8-3D7AC6344B88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BCC775B-2936-453B-ACB8-3D7AC6344B88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BCC775B-2936-453B-ACB8-3D7AC6344B88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

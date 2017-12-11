@@ -46,6 +46,7 @@
     <Compile Include="Math\Circle.cs" />
     <Compile Include="Math\DoubleExtensions.cs" />
     <Compile Include="Math\Rectangle.cs" />
+    <Compile Include="Math\RectangleExtensions.cs" />
     <Compile Include="Math\Vector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shapes\CircleShapeFactory.cs" />

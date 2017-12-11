@@ -112,6 +112,39 @@ namespace TestCloud.Core.Tests.Math
             rectA.IntersectsWith(rectB).Should().BeFalse();
         }
 
+        [Test]
+        public void Return_Area()
+        {
+            Rectangle rectA = CreateRectangle(0, 0, 13, 10);
+
+            rectA.Area.Should().Be(130);
+        }
+
+        [Test]
+        public void Return_Width()
+        {
+            Rectangle rectA = CreateRectangle(0, 0, 13, 10);
+
+            rectA.Width.Should().Be(13);
+        }
+
+        [Test]
+        public void Return_Height()
+        {
+            Rectangle rectA = CreateRectangle(0, 0, 10, 123);
+
+            rectA.Height.Should().Be(123);
+        }
+
+        [Test]
+        public void ReturnRectangle_WhichEncapsulateBothRectangles()
+        {
+            Rectangle rectA = CreateRectangle(0, 0, 10, 10);
+            Rectangle rectB = CreateRectangle(0, 10, 10, 10);
+
+            rectA.Encapsulate(rectB).Should().Be(CreateRectangle(0, 5, 10, 20));
+        }
+
         private static Rectangle CreateRectangle(double x, double y, double width, double height)
         {
             return new Rectangle(new Vector(x, y), new Vector(width, height));
