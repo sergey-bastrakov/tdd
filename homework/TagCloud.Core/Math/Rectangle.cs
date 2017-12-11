@@ -21,7 +21,11 @@
 
         public Rectangle Move(Vector vector) => new Rectangle(Center + vector, Size);
         public Rectangle Move(double x, double y) => Move(new Vector(x, y));
-        
+        public bool IntersectsWith(Rectangle other) => Right > other.Left &&
+                                                       other.Right > Left &&
+                                                       Bottom < other.Top &&
+                                                       other.Bottom < Top;
+
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;

@@ -94,6 +94,24 @@ namespace TestCloud.Core.Tests.Math
             return rect.Move(x, y);
         }
 
+        [Test]
+        public void Intersect_TwoRectangles()
+        {
+            Rectangle rectA = CreateRectangle(0, 0, 10, 10);
+            Rectangle rectB = CreateRectangle(4, 4, 10, 10);
+
+            rectA.IntersectsWith(rectB).Should().BeTrue();
+        }
+
+        [Test]
+        public void NotIntersect_TwoRectangles()
+        {
+            Rectangle rectA = CreateRectangle(0, 0, 10, 10);
+            Rectangle rectB = CreateRectangle(10, 10, 10, 10);
+
+            rectA.IntersectsWith(rectB).Should().BeFalse();
+        }
+
         private static Rectangle CreateRectangle(double x, double y, double width, double height)
         {
             return new Rectangle(new Vector(x, y), new Vector(width, height));
