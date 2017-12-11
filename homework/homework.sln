@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DBBFCC03
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCloud.Core.Tests", "tests\TestCloud.Core.Tests\TestCloud.Core.Tests.csproj", "{763D153A-00EA-49A5-83B9-106B2EEC0146}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagCloud.Client.Forms", "TagCloud.Client.Forms\TagCloud.Client.Forms.csproj", "{0D72AB67-57D1-4FC4-9E04-FD3416469539}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{763D153A-00EA-49A5-83B9-106B2EEC0146}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{763D153A-00EA-49A5-83B9-106B2EEC0146}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{763D153A-00EA-49A5-83B9-106B2EEC0146}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D72AB67-57D1-4FC4-9E04-FD3416469539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D72AB67-57D1-4FC4-9E04-FD3416469539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D72AB67-57D1-4FC4-9E04-FD3416469539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D72AB67-57D1-4FC4-9E04-FD3416469539}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
