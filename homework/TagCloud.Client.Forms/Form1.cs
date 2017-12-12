@@ -16,7 +16,6 @@ namespace TagCloud.Client.Forms
     {
         private readonly List<Rectangle> _rectangles = new List<Rectangle>();
         private IRectangleLayouter _cloudLayouter = new PositionedLayouter(new CircularCloudLayouter(200, 32, 0.1), new Vector(860, 540));
-        private static readonly Random Random = new Random(10);
 
         public Form1()
         {
@@ -30,7 +29,7 @@ namespace TagCloud.Client.Forms
             base.OnPaint(e);
             Graphics g = e.Graphics;
 
-            Bitmap bitmap = _rectangles.Colorize().ToBitmap();
+            Bitmap bitmap = _rectangles.Colorize().ToBitmap(new System.Drawing.Rectangle(0, 0, 1920, 1080));
 
             g.DrawImage(bitmap, new Point(0, 0));
             g.DrawEllipse(new Pen(Color.Black, 2), 640, 320, 440, 440);
