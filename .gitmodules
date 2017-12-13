@@ -1,0 +1,4 @@
+[submodule "TDD homework"]
+    path = homework
+    url = https://github.com/sergey-bastrakov/kontur-homeworks.git
+    branch = homework
